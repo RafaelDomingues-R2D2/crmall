@@ -19,8 +19,8 @@
             @foreach($clientes as $cliente)
                 <tr>
                     <td>{{$cliente->nome}}</td>
-                    <td>{{$cliente->dataDeNascimento}}</td>
-                    <td>{{$cliente->sexo}}</td>
+                    <td>{{date( 'd/m/Y' , strtotime($cliente->dataDeNascimento))}}</td>
+                    <td>{{$cliente->sexo == "M" ? "Masculino" : "Feminino"}} </td>
                     <td>{{$cliente->cep}}</td>
                     <td>{{$cliente->endereco}}</td>
                     <td>{{$cliente->numero}}</td>

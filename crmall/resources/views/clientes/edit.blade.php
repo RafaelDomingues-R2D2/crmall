@@ -22,27 +22,11 @@
                 </div>
             @enderror
         </div>
-        {{-- <div class="form-group">
-            <label>Sexo</label>
-            <input type="text" name="sexo" class="form-control @error('sexo') is-invalid @enderror" value="{{$cliente->sexo}}">
-            @error('sexo')
-                <div class="invalid-feesback">
-                    {{$message}}
-                </div>
-            @enderror
-        </div> --}}
-        {{-- <div class="form-group">
-            <label>Sexo</label><br>
-            <input type="radio" name="sexo" value="M">
-            <label>Masculino</label><br>
-            <input type="radio" name="sexo" value="F">
-            <label>Femenino</label><br>
-        </div> --}}
         <div class="form-group">
             <label>Sexo</label>
-             <select name="sexo" class="form-control">
-                <option value="M">Masculino</option>
-                <option value="F">Feminino</option>
+             <select name="sexo" class="form-control" value="{{$cliente->sexo}}">
+                <option {{$cliente->sexo == "M" ? "selected" : ''}} value="M">Masculino</option>
+                <option  {{$cliente->sexo == "F" ? "selected" : ''}} value="F">Feminino</option>
              </select>
          </div>
         <div class="form-group">
@@ -73,8 +57,13 @@
             <label for="cidade">Cidade</label>
             <input type="text" name="cidade" id="cidade" class="form-control" value="{{$cliente->cidade}}">
         </div>
-        <div>
-            <button type="submit" class="btn btn-lg btn-success">Editar Cliente</button>
-        </div>
+        <footer class="container">
+            <p class="float-left">
+                <button type="submit" class="btn btn-lg btn-success">Editar Cliente</button>
+            </p>
+           <p class="float-right">
+                <a href="{{route('index')}}" class="btn btn-lg btn-primary">Voltar</a>
+           </p>
+        </footer>
     </form>
 @endsection

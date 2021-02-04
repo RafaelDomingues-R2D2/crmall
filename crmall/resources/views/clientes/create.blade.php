@@ -23,13 +23,11 @@
         </div>
         <div class="form-group">
             <label>Sexo</label>
-            <input type="text" name="sexo" class="form-control @error('sexo') is-invalid @enderror" value="{{old('sexo')}}">
-            @error('sexo')
-                <div class="invalid-feesback">
-                    {{$message}}
-                </div>
-            @enderror
-        </div>
+             <select name="sexo" class="form-control">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+             </select>
+         </div>
         <div class="form-group">
             <label for="cep">CEP</label>
             <input type="text" name="cep" id="cep" class="form-control" value="{{old('cep')}}">
@@ -52,42 +50,19 @@
         </div>
         <div class="form-group">
             <label for="estado">Estado</label>
-            <select name="estado" id="estado" class="form-control" value="{{old('estado')}}">
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-            </select>
+            <input type="text" name="estado" id="estado" class="form-control" value="{{old('estado')}}">
         </div>
         <div class="form-group">
             <label for="cidade">Cidade</label>
             <input type="text" name="cidade" id="cidade" class="form-control" value="{{old('cidade')}}">
         </div>
-        <div>
-            <button type="submit" class="btn btn-lg btn-success">Adicionar Cliente</button>
-        </div>
+        <footer class="container">
+            <p class="float-left">
+                <button type="submit" class="btn btn-lg btn-success">Adicionar Cliente</button>
+            </p>
+           <p class="float-right">
+                <a href="{{route('index')}}" class="btn btn-lg btn-primary">Voltar</a>
+           </p>
+        </footer>
     </form>
 @endsection
