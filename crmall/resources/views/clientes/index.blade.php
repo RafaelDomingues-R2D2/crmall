@@ -30,11 +30,11 @@
                     <td>{{$cliente->cidade}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{route('clientes.edit', ['cliente' => $cliente->id])}}" class="btn btn-sm btn-primary">EDITAR</a>
-                            <form action="{{route('clientes.destroy', ['cliente' => $cliente->id])}}" method="post">
+                            <a href="{{route('edit', ['cliente' => $cliente->id])}}" class="btn btn-sm btn-primary">EDITAR</a>
+                            <form action="{{route('destroy', ['cliente' => $cliente->id])}}" method="post">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sn btn-danger">REMOVER</button>
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-sm btn-danger">REMOVER</button>
                             </form>
                         </div>
                     </td>
@@ -42,6 +42,6 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{route('clientes.create')}}" class="btn btn-success">Adicionar Cliente</a>
+    <a href="{{route('create')}}" class="btn btn-success">Adicionar Cliente</a>
     {{$clientes->links()}}
 @endsection

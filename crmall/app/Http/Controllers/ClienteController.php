@@ -47,7 +47,7 @@ class ClienteController extends Controller{
         $cliente = \App\Models\Cliente::create($data);
 
         flash('Cliente adicionado com Sucesso')->success();
-        return redirect()->route('clientes.index');
+        return redirect()->route('index');
     }
 
     /**
@@ -76,7 +76,7 @@ class ClienteController extends Controller{
         $cliente->update($data);
 
         flash('Cliente atualizada com Sucesso')->success();
-        return redirect()->route('clientes.index');
+        return redirect()->route('index');
     }
 
     /**
@@ -90,6 +90,6 @@ class ClienteController extends Controller{
         $cliente->delete();
 
         flash('Cliente removido com Sucesso')->success();
-        return redirect()->route('clientes.index');
+        return redirect()->route('index');
     }
 }
